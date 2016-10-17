@@ -1,4 +1,4 @@
-# TheOreoMan
+# The Oreo Man
 
 > In a village of yore there once was a man,  
 > Who could eat more oreos than anyone can.  
