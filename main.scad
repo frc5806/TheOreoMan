@@ -9,8 +9,6 @@ module tube(height) {
     }
 }
 
-tube(25);
-
 module knotches(num) {
     for (i = [-0.375 : 0.5 : -0.375+0.5*(num-1)]) {
         translate([i,1.125]) square([0.25,thickness]);
@@ -64,6 +62,8 @@ module oreo_blocker() {
 }
 
 module render_3d() {
+    tube(25);
+
     color([1,0,0]) linear_extrude(thickness) top_plate();
 
     translate([0,0,-1]) rotate([0,angle,0]) linear_extrude(thickness) tray_plate();
@@ -75,5 +75,15 @@ module render_3d() {
     color([1,0,1]) translate([3.38,-1.375,-1.87]) rotate([0,0,90]) linear_extrude(thickness) oreo_blocker();
 }
 
-render_3d();
+module laser_layout() {
+    translate([1.6,1.6]) top_plate();
+    translate([1.6,6.7]) rotate(-90) tray_plate();
+    translate([0.1,9.3]) rotate(-20) side_plate();
+    translate([3.8,9.2]) rotate(250) side_plate();
+    translate([3.5,3]) rotate(90) oreo_blocker();
+
+}
+
+//render_3d();
+laser_layout();
 
